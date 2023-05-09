@@ -1,13 +1,11 @@
 # Road to Pytorch (Linear Regression)
 Personal learning notes of Pytorch basics, contens were mostly from Daniel Bourke. Wish to learn more of the details, please check his own [Youtube channel](https://www.youtube.com/watch?v=Z_ikDlimN6A, 'YT Link').
 ## Contents
-- ### [**Linear Regression**](#LR)
-  - [**Import Pytorch and Data Preparation**](#Settings)
-  - [**Visualization**](#Visual)
-  - [**Linear Regression Model**](#LRModel)
+- ### [**Import Pytorch and Data Preparation**](#Settings)
+- ### [**Visualization**](#Visual)
+- ### [**Linear Regression Model**](#LRModel)
 
-<h2 id="LR">🏷 Linear Regression</h2>
-<h3 id="Settings">Import Pytorch and Data Settings</h3>
+<h2 id="Settings">Import Pytorch and Data Settings</h2>
 
 First step of any Python coding is probably `import` libraries/packages.
 ```python
@@ -41,7 +39,7 @@ X_test, y_test = X[train_split:], y[train_split:]
 ```
 > The length of `X_train` (and `y_train`) will be **(1 / 0.02) * (0.8) = 40**, `X_test` (`y_test`) will be **(1 / 0.02) * (0.2) = 10**.
 
-<h3 id="Visual">Visualization</h3>
+<h2 id="Visual">Visualization</h2>
 
 Visualize the data points for clarity. The plotting function will plot the training data points, testing data points and the predicted data points if they existed.
 ```python
@@ -60,4 +58,4 @@ def plot_prediction(train_data = X_train,
 ```
 > The training set will be plotted as blue, testing set will be green and the predictions will be red.
 
-<h3 id="LRModel">Linear Regression Model</h3>
+<h2 id="LRModel">Linear Regression Model</h2>
