@@ -1,4 +1,4 @@
-# Trip-to-Pytorch
+# Road to Pytorch (Linear Regression)
 Personal learning notes of Pytorch basics, contens were mostly from Daniel Bourke. Wish to learn more of the details, please check his own [Youtube channel](https://www.youtube.com/watch?v=Z_ikDlimN6A, 'YT Link').
 ## Contents
 - ### [**Linear Regression**](#LR)
