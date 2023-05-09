@@ -17,7 +17,9 @@ import matplotlib.pyplot as plt
 ```
 > Import `torch` for accessing the modules under Pytorch, `nn` for later model class inheritance.
 
-There is no better way of using [linear regression](https://en.wikipedia.org/wiki/Linear_regression, 'Wiki of LR') (LR) for training of LR model. LR is generally in a form of `y = weight * X + bias`, which we shall create the function first.
+There is no better way of using [linear regression](https://en.wikipedia.org/wiki/Linear_regression, 'Wiki of LR') (LR) for training of LR model. 
+
+LR is generally in a form of `y = weight * X + bias`, which we shall create the function first.
 ```python
 # set fixed parameters
 weight = 0.7
