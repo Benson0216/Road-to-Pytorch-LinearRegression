@@ -1,5 +1,5 @@
 # Road to Pytorch (Linear Regression)
-Personal learning notes of Pytorch basics, contens were mostly from Daniel Bourke. Wish to learn more of the details, please check his own [Youtube channel](https://www.youtube.com/watch?v=Z_ikDlimN6A, 'YT Link').
+Personal learning notes of Pytorch basics, contens were mostly from Daniel Bourke. Wish to learn more of the details, please check his own [Youtube channel](https://www.youtube.com/watch?v=Z_ikDlimN6A, 'YT Link'). I want to put everything together for myself and it will be nice if the contents can help those who want to learn about Pytorch, so GOOD LUCK~~
 ## Contents
 - ### [**Import Pytorch and Data Preparation**](#Settings)
 - ### [**Visualization**](#Visual)
