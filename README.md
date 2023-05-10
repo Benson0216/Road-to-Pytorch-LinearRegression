@@ -7,7 +7,7 @@ Personal learning notes of Pytorch basics, contens were mostly from Daniel Bourk
 
 <h2 id="Settings">Import Pytorch and Data Settings</h2>
 
-First step of any Python coding is probably `import` libraries/packages.
+First step of any Python coding is probably **import** libraries/packages.
 ```python
 import torch
 from torch import nn
@@ -59,3 +59,9 @@ def plot_prediction(train_data = X_train,
 > The training set will be plotted as blue, testing set will be green and the predictions will be red.
 
 <h2 id="LRModel">Linear Regression Model</h2>
+
+We shall build the first Pytorch model. First of all, we will build **Class** called `LinearRegressionModel`, which will inherit from `nn.Module`.
+```python
+# create linear regression model class
+class LinearRegressionModel(nn.Module): # <- almost everything in pytorch inherhit from nn.Module
+```
