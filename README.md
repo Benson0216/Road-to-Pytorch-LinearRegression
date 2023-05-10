@@ -60,8 +60,38 @@ def plot_prediction(train_data = X_train,
 
 <h2 id="LRModel">Linear Regression Model</h2>
 
-We shall build the first Pytorch model. First of all, we will build **Class** called `LinearRegressionModel`, which will inherit from `nn.Module`.
+Before building the model, here are some Pytorch model essentials：
+* `torch.nn` - contains all the buildings for computational graphs (aka nn)
+* `torch.nn.parameter` - what parameters should our model try and learn, often a pytorch layer will set these for us
+* `torch.nn.Module` - the base class for all neural network modules, if you subclass it, you should overwrite `forward()`
+* `torch.optim` - this is where the optimizer in pytorch live, they will help with gradient descent
+* `def forward()` - defines what happenens in the forward computaions
+
+First of all, we shall build the model **Class** called `LinearRegressionModel` that inherit from `nn.Module`.
 ```python
 # create linear regression model class
 class LinearRegressionModel(nn.Module): # <- almost everything in pytorch inherhit from nn.Module
+  ...
 ```
+Afterwards, initialize the parameters that we gonna use, which are bias and weight.
+```python
+def __init__(self):
+    super().__init__()
+
+    # initialize the parameters (parameters that will be used into the computations)
+    self.weights = nn.Parameter(torch.randn(1,
+                                            requires_grad=True,
+                                            dtype=torch.float))
+    self.bias = nn.Parameter(torch.randn(1,
+                                        requires_grad=True,
+                                        dtype=torch.float))
+```
+> Both bias and weight will be randomly generated.
+
+In the end, overwrite the `forward()`, which will return the calculation results of linear regression function.
+```python
+# forward() defines the computaion in the model
+def forward(self, x:torch.Tensor) -> torch.Tensor: # <- "x" is the input data
+    return self.weights * x + self.bias # linear regression model
+```
+> Take **x** as input, the return value type should be `torch.Tensor` as well.
