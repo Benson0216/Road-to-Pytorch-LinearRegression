@@ -1,5 +1,5 @@
 # Road to Pytorch (Linear Regression)
-Personal learning notes of Pytorch basics, contens were mostly from Daniel Bourke. Wish to learn more of the details, please check his own [Youtube channel](https://www.youtube.com/watch?v=Z_ikDlimN6A, 'YT Link'). I want to put everything together for myself and it will be nice if the contents can help those who want to learn about Pytorch, so GOOD LUCK~~
+Learning notes of Pytorch basics, contents were mostly from Daniel Bourke. Wish to learn more of the details, please check his own [Youtube channel](https://www.youtube.com/watch?v=Z_ikDlimN6A, 'YT Link'). I want to put everything together for myself. It will be nice if the contents can help those who want to learn about Pytorch for the first time.
 ## Contents
 - ### [**Import Pytorch and Data Preparation**](#Settings)
 - ### [**Visualization**](#Visual)
@@ -30,7 +30,8 @@ step = 0.02
 X = torch.arange(start, end, step).unsqueeze(dim = 1)
 y = weight * X + bias
 ```
-Afterwards, we shall split the data into training and testing dataset, which will be in a ratio of 8:2.
+
+Afterwards, we shall split the data into training and testing dataset in a ratio of 8 and 2.
 ```python
 # split data into training set and testing set
 train_split = int(len(X) * 0.8)
@@ -41,7 +42,7 @@ X_test, y_test = X[train_split:], y[train_split:]
 
 <h2 id="Visual">Visualization</h2>
 
-Visualize the data points for clarity. The plotting function will plot the training data points, testing data points and the predicted data points if they existed.
+Visualizing data points for clarity of results. The plotting function will plot the training data points, testing data points and the predicted data points if they existed.
 ```python
 # visualize
 def plot_prediction(train_data = X_train,
@@ -95,3 +96,24 @@ def forward(self, x:torch.Tensor) -> torch.Tensor: # <- "x" is the input data
     return self.weights * x + self.bias # linear regression model
 ```
 > Take **x** as input, the return value type should be `torch.Tensor` as well.
+
+Put everything together:
+```python
+# create linear regression model class
+class LinearRegressionModel(nn.Module): # <- almost everything in pytorch inherhit from nn.Module
+    def __init__(self):
+        super().__init__()
+
+        # initialize the parameters (parameters that will be used into the computations)
+        self.weights = nn.Parameter(torch.randn(1,
+                                                requires_grad=True,
+                                                dtype=torch.float))
+        self.bias = nn.Parameter(torch.randn(1,
+                                            requires_grad=True,
+                                            dtype=torch.float))
+        
+    # forward() defines the computaion in the model
+    def forward(self, x:torch.Tensor) -> torch.Tensor: # <- "x" is the input data
+        return self.weights * x + self.bias # linear regression model
+```
+
